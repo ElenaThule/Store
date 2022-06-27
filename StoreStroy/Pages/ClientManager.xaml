@@ -29,7 +29,7 @@
                 <Label  Background="#FF76E383" >
                     Поиск по наименованию
                 </Label>
-                <TextBox x:Name="findElem" TextChanged="findElem_TextChanged"/>
+                <TextBox x:Name="findElem" TextChanged="findElem_TextChanged" Height="23"/>
             </StackPanel>
             <StackPanel>
                 <Label Background="#FF76E383">
