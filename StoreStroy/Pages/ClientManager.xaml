@@ -1,0 +1,100 @@
+﻿<Window x:Class="StoreStroy.ClientManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StoreStroy"
+        mc:Ignorable="d"
+        Title="Каталог товаров" Height="450" Width="1000"
+        WindowStartupLocation="CenterScreen" FontFamily="Comic Sans MS"
+        Icon="C:\Users\user452.CHENK\source\repos\StoreStroy\StoreStroy\Assets\icon.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Image
+            HorizontalAlignment="Left"
+             Source="C:\Users\user452.CHENK\source\repos\StoreStroy\StoreStroy\Assets\logo.png"></Image>
+        <Label Grid.Row="0" HorizontalAlignment="Center" Margin="335,0,75,0" Width="382" FontSize="22">
+            Товары
+        </Label>
+        <Label x:Name="fioElement"  HorizontalAlignment="Right" Width="174">
+
+        </Label>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal">
+            <StackPanel>
+                <Label  Background="#FF76E383" >
+                    Поиск по наименованию
+                </Label>
+                <TextBox x:Name="findElem" TextChanged="findElem_TextChanged"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Background="#FF76E383">
+                    Сортировка по  производителю
+                </Label>
+                <ComboBox x:Name="filterElem" SelectionChanged="filterElem_SelectionChanged" >
+                    <ComboBoxItem>
+                        Все производители
+                    </ComboBoxItem>
+                    <ComboBoxItem>Husqvarna</ComboBoxItem>
+                    <ComboBoxItem>Vinylon</ComboBoxItem>
+                    <ComboBoxItem>ЛСР</ComboBoxItem>
+                    <ComboBoxItem>MixMaster</ComboBoxItem>
+                    <ComboBoxItem>Hesler</ComboBoxItem>
+                    <ComboBoxItem>Armero</ComboBoxItem>
+                    <ComboBoxItem>KILIMGRIN</ComboBoxItem>
+                    <ComboBoxItem>Delta</ComboBoxItem>
+                    <ComboBoxItem>Armero</ComboBoxItem>
+                    <ComboBoxItem>Weber</ComboBoxItem>
+                    <ComboBoxItem>Изостронг</ComboBoxItem>
+                    <ComboBoxItem>Knauf</ComboBoxItem>
+                    <ComboBoxItem>Исток</ComboBoxItem>
+                    <ComboBoxItem>Wenzo Roma</ComboBoxItem>
+                    <ComboBoxItem>ВОЛМА</ComboBoxItem>
+                    <ComboBoxItem>М500</ComboBoxItem>
+                    <ComboBoxItem>RUIZ</ComboBoxItem>
+                    <ComboBoxItem>Павловский завод</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid x:Name="productListElem"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Grid.Row="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                    Header="ID товара" Width="*" Binding="{Binding ProductArticleNumber}"
+                 />
+                <DataGridTextColumn 
+                    Header="Наименования" Width="*" Binding="{Binding ProductName}"                 
+                        />
+                <DataGridTextColumn 
+                    Header="Описание" Width="*" Binding="{Binding ProductDescription}"
+                 />
+                <DataGridTextColumn 
+                    Header="Категория" Width="*" Binding="{Binding ProductCategory}"
+                 />
+                <DataGridTextColumn 
+                    Header="Производитель" Width="*" Binding="{Binding ProductManufacturer}"
+                 />
+                <DataGridTextColumn 
+                    Header="Цена" Width="*" Binding="{Binding ProductCost}"
+                 />
+                <DataGridTextColumn 
+                    Header="Скидка" Width="*" Binding="{Binding ProductDiscountAmount}"
+                 />
+                <DataGridTextColumn 
+                    Header="Остаток на складе" Width="*" Binding="{Binding ProductQuantityInStock}"
+                 />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="3" Height="30" Width="100" HorizontalAlignment="Right"
+                Margin="10,10,30,10"  Background="#FF498C51" Click="Button_Click" >
+            Назад
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,69 @@
+﻿<Window x:Class="StoreStroy.Guest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StoreStroy"
+        mc:Ignorable="d"
+        Title="Гость" WindowStartupLocation="CenterScreen"  Height="450" Width="1000"
+         FontFamily="Comic Sans MS"
+         Icon="C:\Users\user452.CHENK\source\repos\StoreStroy\StoreStroy\Assets\icon.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Image
+            HorizontalAlignment="Left"
+            Source="C:\Users\user452.CHENK\source\repos\StoreStroy\StoreStroy\Assets\logo.png"></Image>
+        <Label Grid.Row="0" HorizontalAlignment="Center" Margin="335,0,75,0" Width="382" FontSize="22">
+            Товары
+        </Label>
+        <Label x:Name="fioElement"  HorizontalAlignment="Right" Width="277">
+            Вы можете просматривать товары как Гость
+        </Label>
+
+        <DataGrid x:Name="productListElem"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Grid.Row="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                    Header="ID товара" Width="*" Binding="{Binding ProductArticleNumber}"
+                 />
+                <DataGridTextColumn 
+                    Header="Наименования" Width="*" Binding="{Binding ProductName}"                 
+                        />
+                <DataGridTextColumn 
+                    Header="Описание" Width="*" Binding="{Binding ProductDescription}"
+                 />
+                <DataGridTextColumn 
+                    Header="Категория" Width="*" Binding="{Binding ProductCategory}"
+                 />
+                <DataGridTextColumn 
+                    Header="Производитель" Width="*" Binding="{Binding ProductManufacturer}"
+                 />
+                <DataGridTextColumn 
+                    Header="Цена" Width="*" Binding="{Binding ProductCost}"
+                 />
+                <DataGridTextColumn 
+                    Header="Скидка" Width="*" Binding="{Binding ProductDiscountAmount}"
+                 />
+                <DataGridTextColumn 
+                    Header="Остаток на складе" Width="*" Binding="{Binding ProductQuantityInStock}"
+                 />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Background="#FF498C51" Grid.Row="3" Height="30" Width="100" HorizontalAlignment="Right"
+                Margin="10,10,30,10" Click="Button_Click" >
+            Назад
+        </Button>
+        <Button Background="#FF498C51" Grid.Row="3" Height="30" Width="153" HorizontalAlignment="Center"
+                Margin="457,10,182,10" >
+            Зарегистрироваться
+        </Button>
+    </Grid> 
+</Window>
